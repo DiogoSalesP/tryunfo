@@ -236,3 +236,33 @@ Você deverá usar a prop `onInputChange` para passar uma callback para lidar co
   - Será validado se é renderizado no preview da carta o valor digitado no input referente ao atributo 3 no formulário.
   - Será validado se é renderizado no preview da carta o `data-testid="trunfo-card"` se o checkbox Super Trunfo for selecionado.
 </details>
+
+## 5. Faça a validação do botão de Salvar no formulário
+
+<details><summary>O botão que possui o atributo <code>data-testid="save-button"</code> só deve estar habilitado se todas as informações do formulário estiverem preenchidas corretamente, seguindo as seguintes regras:</summary>
+
+  * Os campos `Nome`, `Descrição`, `Imagem` e `Raridade ` devem conter alguma informação (ou seja, os `inputs` não podem estar vazios).
+
+  * A soma dos valores dos 3 atributos (`attr1-input`, `attr2-input` e `attr3-input`) não pode ultrapassar o valor **210**.
+
+  * Cada um dos três atributos pode ter **no máximo 90 pontos cada**.
+  
+  * Os atributos não podem receber valores negativos.
+</details><br />
+
+<details>
+  <summary><strong>O que será verificado</strong></summary><br />
+
+  - Será validado se o botão `salvar` está desabilitado quando a página é renderizada pela primeira vez.
+  - Será validado se o botão `salvar` está desabilitado se o campo nome estiver vazio.
+  - Será validado se o botão `salvar` está desabilitado se o campo imagem estiver vazio.
+  - Será validado se o botão `salvar` está desabilitado se o campo descrição estiver vazio.
+  - Será validado se o botão `salvar` está desabilitado se o campo do atributo 1 for maior que 90.
+  - Será validado se o botão `salvar` está desabilitado se o campo do atributo 1 for menor que 0.
+  - Será validado se o botão `salvar` está desabilitado se o campo do atributo 2 for maior que 90.
+  - Será validado se o botão `salvar` está desabilitado se o campo do atributo 2 for menor que 0.
+  - Será validado se o botão `salvar` está desabilitado se o campo do atributo 3 for maior que 90.
+  - Será validado se o botão `salvar` está desabilitado se o campo do atributo 3 for menor que 0.
+  - Será validado se o botão `salvar` está desabilitado se a somatória dos campos de atributos for maior que 210.
+  - Será validado se o botão `salvar` é habilitado ao preencher todos os campos do formulário corretamente.
+</details>
