@@ -101,7 +101,7 @@ export default class Form extends Component {
         />
         <button
           type="submit"
-          disabled={ isSaveButtonDisabled }
+          disabled={ !isSaveButtonDisabled() }
           onClick={ onSaveButtonClick }
         >
           Salvar
