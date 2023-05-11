@@ -6,7 +6,6 @@ export default class Form extends Component {
   render() {
     const {
       cardName,
-      onInputChange,
       cardDescription,
       cardAttr1,
       cardAttr2,
@@ -14,69 +13,77 @@ export default class Form extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
+      onInputChange,
       isSaveButtonDisabled,
       onSaveButtonClick,
     } = this.props;
     return (
       <div className="form-input">
-        <label htmlFor="name-input">
+        <label htmlFor="cardName">
           <input
-            name="name-input"
-            id="name-input"
+            name="cardName"
+            id="cardName"
             type="text"
             value={ cardName }
             onChange={ onInputChange }
+            placeholder="Name"
           />
         </label>
-        <label htmlFor="description-input">
+        <label htmlFor="cardDescription">
           <textarea
-            name="description-input"
-            id="description-input"
+            name="cardDescription"
+            id="cardDescription"
             type="textarea"
             value={ cardDescription }
             onChange={ onInputChange }
+            placeholder="Description"
+
           />
         </label>
-        <label htmlFor="attr1-input">
+        <label htmlFor="cardAttr1">
           <input
-            name="attr1-input"
-            id="attr1-input"
+            name="cardAttr1"
+            id="cardAttr1"
             type="number"
             value={ cardAttr1 }
             onChange={ onInputChange }
+            placeholder="Attr-1"
           />
         </label>
-        <label htmlFor="attr2-input">
+        <label htmlFor="cardAttr2">
           <input
-            name="attr2-input"
-            id="attr2-input"
+            name="cardAttr2"
+            id="cardAttr2"
             type="number"
             value={ cardAttr2 }
             onChange={ onInputChange }
+            placeholder="Attr-2"
           />
         </label>
-        <label htmlFor="attr3-input">
+        <label htmlFor="cardAttr3">
           <input
-            name="attr3-input"
-            id="attr3-input"
+            name="cardAttr3"
+            id="cardAttr3"
             type="number"
             value={ cardAttr3 }
             onChange={ onInputChange }
+            placeholder="Attr-3"
           />
         </label>
-        <label htmlFor="image-input">
+        <label htmlFor="cardImage">
           <input
-            name="image-input"
-            id="image-input"
+            name="cardImage"
+            id="cardImage"
             type="text"
             value={ cardImage }
             onChange={ onInputChange }
+            placeholder="Image"
           />
         </label>
-        <label htmlFor="rare-input">
+        <label htmlFor="cardRare">
           <select
-            name="rare-input"
-            id="rare-input"
+            name="cardRare"
+            id="cardRare"
             value={ cardRare }
             onChange={ onInputChange }
           >
@@ -86,8 +93,8 @@ export default class Form extends Component {
           </select>
         </label>
         <input
-          name="trunfo-input"
-          id="trunfo-input"
+          id="cardTrunfo"
+          name="cardTrunfo"
           type="checkbox"
           checked={ cardTrunfo }
           onChange={ onInputChange }
@@ -106,13 +113,11 @@ export default class Form extends Component {
 
 Form.propTypes = {
   cardName: PropTypes.string,
+  onInputChange: PropTypes.func,
   cardDescription: PropTypes.string,
   cardAttr1: PropTypes.string,
   cardAttr2: PropTypes.string,
   cardAttr3: PropTypes.string,
   cardImage: PropTypes.string,
   cardRare: PropTypes.string,
-  onInputChange: PropTypes.func,
-  onSaveButtonClick: PropTypes.func,
-  isSaveButtonDisabled: PropTypes.bool,
 }.isRequired;
